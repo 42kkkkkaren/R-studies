@@ -53,3 +53,30 @@ gpscatter <- ggplot(mydata, aes(x=Assault, y=Murder)) +
              geom_smooth(method=lm,  linetype="dashed",
                           color="darkred", fill="blue")
 gpscatter
+
+#3) 
+data(swiss)
+mydata = swiss
+dim(swiss)
+#[1] 47  6
+names(swiss)
+#[1] "Fertility"        "Agriculture"      "Examination"      "Education"       
+#[5] "Catholic"         "Infant.Mortality"
+
+p <- ggplot(mydata, aes(x = Fertility, y = Education)) + 
+                                            geom_point()
+p
+
+p1 <- ggplot(mydata, aes(x = Fertility, y = Education)) +
+                         geom_point(size = 2, shape = 23)
+p1
+
+p2 <- ggplot(mydata, aes(x = Fertility, y = Education)) +
+                                            geom_point()+
+                                            geom_smooth()
+p2
+
+p3 <- ggplot(mydata, aes(x = Fertility, y = Education)) + 
+                                            geom_point()+
+                                 geom_smooth(method = lm)
+p3
