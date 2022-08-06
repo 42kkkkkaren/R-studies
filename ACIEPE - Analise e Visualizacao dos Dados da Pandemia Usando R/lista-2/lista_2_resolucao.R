@@ -1,5 +1,5 @@
-#D˙vidas
-#ExercÌcio 1: Com bins a informaÁ„o n„o fica mais pobre? VocÍ recebe menos acur·cia.
+#D√∫vidas
+#Exerc√≠cio 1: Com bins a informa√ß√£o n√£o fica mais pobre? Voc√™ recebe menos acur√°cia.
 
 
 #1)
@@ -45,3 +45,11 @@ gbpUrbanPop
 gbpRape = ggplot(data = mydata) +
   geom_boxplot(mapping = aes(x = 1, y = Rape), fill = 'gray', color = 'black')
 gbpRape
+
+#2)
+#Gr√°fico de dispers√£o a fim de verificar como o n√≠vel de assassinatos se relaciona com a quantidade de assaltos
+gpscatter <- ggplot(mydata, aes(x=Assault, y=Murder)) + 
+                    geom_point(shape=18, color="blue")+
+             geom_smooth(method=lm,  linetype="dashed",
+                          color="darkred", fill="blue")
+gpscatter
